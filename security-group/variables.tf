@@ -5,12 +5,11 @@ variable "security_group_name" {
 }
 
 variable "http_port" {
+  default = null
 }
 
 variable "https_port" {
-}
-
-variable "netdata_port" {
+  default = null
 }
 
 variable "ssh_port" {
@@ -26,17 +25,22 @@ variable "all_ip" {
 
 # Tags
 variable "name" {
+  default = null
 }
 
 variable "application" {
+  default = null
 }
 
 variable "environment" {
+  default = null
 }
 
 variable "team" {
+  default = null
 }
 
 variable "project" {
+  default = null
 }
 

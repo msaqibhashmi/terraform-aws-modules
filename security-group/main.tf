@@ -18,13 +18,6 @@ resource "aws_security_group" "firewall" {
   }
 
   ingress {
-    from_port   = var.netdata_port
-    to_port     = var.netdata_port
-    protocol    = "tcp"
-    cidr_blocks = var.trusted_ip
-  }
-
-  ingress {
     from_port   = var.ssh_port
     to_port     = var.ssh_port
     protocol    = "tcp"
