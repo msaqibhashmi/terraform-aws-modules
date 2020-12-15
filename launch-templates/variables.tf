@@ -1,4 +1,5 @@
 variable "image_id" {}
+variable "instance_profile" { default = null }
 variable "instance_type" {}
 variable "volume_size" {}
 variable "volume_type" {}

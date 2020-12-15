@@ -1,12 +1,12 @@
 # IAM Role Jenkins Master
 resource "aws_iam_policy" "policy" {
   name   = var.custom_policy_name
-  policy = file("policy.json")
+  policy = file(var.policy_file)
 }
 
 resource "aws_iam_role" "role" {
   name               = var.role_name
-  assume_role_policy = file("/root/iac-modules/iam/roles/custom_policy/assume_role.json")
+  assume_role_policy = file(var.assume_role_file)
   tags = {
     Application = var.Application
     Environment = var.Environment

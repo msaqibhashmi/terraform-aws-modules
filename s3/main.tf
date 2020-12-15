@@ -1,8 +1,11 @@
 resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
+
   versioning {
-    enabled = var.versioning
+    enabled    = lookup(var.versioning, "enabled", true)
+    mfa_delete = lookup(var.versioning, "mfa_delete", false)
   }
+
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
@@ -10,6 +13,7 @@ resource "aws_s3_bucket" "bucket" {
       }
     }
   }
+
   tags = {
     Name        = var.Name
     Application = var.Application

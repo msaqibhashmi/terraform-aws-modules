@@ -6,6 +6,6 @@ resource "aws_eip" "elastic-ip" {
     Environment = var.environment
     Team        = var.team
     Project     = var.project
+    Service     = var.service
   }
 }
-

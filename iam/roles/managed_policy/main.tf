@@ -5,9 +5,7 @@ data "aws_iam_policy" "find" {
 
 resource "aws_iam_role" "role" {
   name = var.role_name
-  assume_role_policy = file(
-    "/root/iac-modules/iam/roles/managed_policy/assume_role.json",
-  )
+  assume_role_policy = file(var.assume_role_file)
   tags = {
     Application = var.Application
     Environment = var.Environment

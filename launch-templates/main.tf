@@ -7,6 +7,10 @@ resource "aws_launch_template" "this" {
   vpc_security_group_ids  = [var.security_group_id, var.default_security_group_id, var.peering_security_group_id]
   disable_api_termination = var.disable_api_termination
 
+  iam_instance_profile {
+    name = var.instance_profile
+  }
+
   block_device_mappings {
     device_name = "/dev/sda1"
     no_device   = true

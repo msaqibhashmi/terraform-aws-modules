@@ -1,5 +1,6 @@
 # ELB Attachment
 variable "target_group_arn" {
+  type = list(string)
 }
 
 # Instance config

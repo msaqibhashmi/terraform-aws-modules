@@ -1,18 +1,16 @@
 resource "aws_cloudwatch_metric_alarm" "this" {
   alarm_name          = var.name
-  namespace           = "AWS/EC2"
+  alarm_description   = var.alarm_description
+  namespace           = var.namespace
   comparison_operator = var.comparison_operator
-  evaluation_periods  = var.evaluaiton_period
+  evaluation_periods  = var.evaluation_periods
   metric_name         = var.metric_name
   period              = var.period
   statistic           = var.statistics
   threshold           = var.threshold
 
-  dimensions = {
-    AutoScalingGroupName = var.asg_name
-  }
-
-  alarm_actions = [var.asg_policy_arn, var.alert_manager]
+  dimensions    = var.dimensions
+  alarm_actions = var.alarm_actions
 
   tags = {
     Name        = var.name

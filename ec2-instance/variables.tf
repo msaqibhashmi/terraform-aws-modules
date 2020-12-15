@@ -9,6 +9,17 @@ variable "subnet_id" {
 variable "instance_type" {
 }
 
+# Instance key
+variable "key_name" {
+  default = null
+}
+
+#Bootstrap_file
+variable "bootstrap_file" { 
+  default = "bootstrap.sh"
+} 
+
+
 variable "instance_profile" {
   default = null
 }
@@ -26,24 +37,23 @@ variable "security_group_id" {
 variable "default_security_group_id" {
 }
 
+variable "peering_security_group_id" {
+  default = null
+}
+
 # Tags
 variable "name" {
-  default = null
 }
 
 variable "application" {
-  default = null
 }
 
 variable "environment" {
-  default = null
 }
 
 variable "team" {
-  default = null
 }
 
 variable "project" {
-  default = null
 }
 

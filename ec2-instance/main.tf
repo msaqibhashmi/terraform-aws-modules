@@ -4,7 +4,8 @@ resource "aws_instance" "virtual-machine" {
   security_groups      = [var.security_group_id, var.default_security_group_id]
   instance_type        = var.instance_type
   iam_instance_profile = var.instance_profile
-  user_data            = file("bootstrap.sh")
+  key_name             = var.key_name
+  user_data            = file(var.bootstrap_file)
   root_block_device {
     volume_size           = var.volume_size
     volume_type           = var.volume_type

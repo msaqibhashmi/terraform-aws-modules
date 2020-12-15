@@ -1,10 +1,13 @@
+variable "role_name" {
+}
+
 variable "custom_policy_name" {
 }
 
-variable "policy_json_path" {
+variable "policy_file" {
 }
 
-variable "role_name" {
+variable "assume_role_file" {
 }
 
 variable "Application" {
